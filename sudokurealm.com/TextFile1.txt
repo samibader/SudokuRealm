@@ -1,0 +1,98 @@
+﻿<div class="slider">
+        <div class="container-fluid">
+            <div id="heroSlider" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <div class="hero-unit">
+                            <div class="row-fluid">
+                                <div class="span7 marketting-info">
+                                    <h2>
+                                        Welcome to
+                                    </h2>
+                                    <h1>
+                                        SUDOKU REALM</h1>
+                                    <br />
+                                    <p>
+                                        <a href="Default.aspx">Sudoku Realm</a> offers you hundreds and hundreds of genuiun
+                                        sudoku games that can be played in the most user-friendy web page with advanced
+                                        help system , and you can try it now from below by choosing a level that is suitable
+                                        for you and a free random game will be delivered to you ....
+                                    </p>
+                                    <p>
+                                        <a href="Account/Register.aspx">Register</a> at our site now and you will have access
+                                        to our huge sudoku games database .. Plus , you can try other shapes rather than
+                                        Standard ..
+                                    </p>
+                                    <p>
+                                        <asp:HyperLink NavigateUrl="~/Tutorial.aspx" Text=">>> Start a Tutorial <<<" CssClass="btn btn-large btn-primary"
+                                            runat="server" />
+                                    </p>
+                                </div>
+                                <div class="span5">
+                                    <asp:Image ID="Image1" ImageUrl="~/Images/sudoku.jpg" runat="server" CssClass="thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="hero-unit">
+                            <div class="row-fluid">
+                                <div class="span7 marketting-info">
+                                    <h1>
+                                        STANDARD</h1>
+                                    <p>
+                                        Sudoku is a puzzle with a grid containing multiple large blocks. Each block is divided
+                                        into its own matrix of nine cells. The rules for solving Sudoku puzzles are very
+                                        simple: each row, column and block must contain one of the numbers from "1" to "9".
+                                        No number may appear more than once in any row, column, or block. When you've filled
+                                        the entire grid, the puzzle is solved.
+                                    </p>
+                                </div>
+                                <div class="span5">
+                                    <asp:Image ID="Image2" ImageUrl="~/Images/standard.png" runat="server" CssClass="thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="hero-unit">
+                            <div class="row-fluid">
+                                <div class="span7 marketting-info">
+                                    <h1>
+                                        SAMURAI</h1>
+                                    <br />
+                                    <br />
+                                    <p>
+                                        <asp:Image ID="Image5" ImageUrl="~/Images/Comingsoon.png" runat="server" />
+                                    </p>
+                                </div>
+                                <div class="span5">
+                                    <asp:Image ID="Image3" ImageUrl="~/Images/samurai.png" runat="server" CssClass="thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="hero-unit">
+                            <div class="row-fluid">
+                                <div class="span7 marketting-info">
+                                    <h1>
+                                        CLOCK</h1>
+                                    <br />
+                                    <br />
+                                    <p>
+                                        <asp:Image ImageUrl="~/Images/Comingsoon.png" runat="server" />
+                                    </p>
+                                </div>
+                                <div class="span5">
+                                    <asp:Image ID="Image4" ImageUrl="~/Images/clock.png" runat="server" CssClass="thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#heroSlider" data-slide="prev">‹</a> <a class="right carousel-control"
+                    href="#heroSlider" data-slide="next">›</a>
+            </div>
+        </div>
+    </div>

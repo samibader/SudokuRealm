@@ -1,0 +1,1012 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4DC7D01-1368-48BF-BA49-706DD28EC130}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sudokurealm.com</RootNamespace>
+    <AssemblyName>sudokurealm.com</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="ApplicationServices-Deployment" Order="1">
+          <Destination Path="Data Source=173.0.136.201,5006%3bInitial Catalog=naseem_DB%3bPersist Security Info=True%3bUser ID=naseem_admin%3bPassword=hassan" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bAttachDbFilename=|DataDirectory|\SudokuDB.mdf%3bIntegrated Security=True%3bUser Instance=True" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" />
+            <Source Path="obj\Debug\AutoScripts\ApplicationServices-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxMin, Version=4.95.4924.12383, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxMin.4.95.4924.12392\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="CaptchaControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="EcmaScript.NET">
+      <HintPath>..\packages\EcmaScript.Net.1.0.1.0\lib\net20\EcmaScript.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="WebControlCaptcha, Version=1.1.2348.19762, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\packages\YUICompressor.NET.2.2.0.0\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\CapchaImage.jpg" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\ManageGames.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\SudokuService.asmx" />
+    <Content Include="Admin\assets\css\animate.css" />
+    <Content Include="Admin\assets\css\animate.min.css" />
+    <Content Include="Admin\assets\css\bootstrap-progressbar.css" />
+    <Content Include="Admin\assets\css\bootstrap-responsive.css" />
+    <Content Include="Admin\assets\css\bootstrap-responsive.min.css" />
+    <Content Include="Admin\assets\css\bootstrap-toggle-buttons.css" />
+    <Content Include="Admin\assets\css\bootstrap-wysihtml5-0.0.2.css" />
+    <Content Include="Admin\assets\css\bootstrap.css" />
+    <Content Include="Admin\assets\css\bootstrap.min.css" />
+    <Content Include="Admin\assets\css\calendar.css" />
+    <Content Include="Admin\assets\css\chosen.css" />
+    <Content Include="Admin\assets\css\colorpicker.css" />
+    <Content Include="Admin\assets\css\countdown.css" />
+    <Content Include="Admin\assets\css\datatable\back_disabled.png" />
+    <Content Include="Admin\assets\css\datatable\back_enabled.png" />
+    <Content Include="Admin\assets\css\datatable\back_enabled_hover.png" />
+    <Content Include="Admin\assets\css\datatable\favicon.ico" />
+    <Content Include="Admin\assets\css\datatable\forward_disabled.png" />
+    <Content Include="Admin\assets\css\datatable\forward_enabled.png" />
+    <Content Include="Admin\assets\css\datatable\forward_enabled_hover.png" />
+    <Content Include="Admin\assets\css\datatable\sort_asc.png" />
+    <Content Include="Admin\assets\css\datatable\sort_asc_disabled.png" />
+    <Content Include="Admin\assets\css\datatable\sort_both.png" />
+    <Content Include="Admin\assets\css\datatable\sort_desc.png" />
+    <Content Include="Admin\assets\css\datatable\sort_desc_disabled.png" />
+    <Content Include="Admin\assets\css\datepicker.css" />
+    <Content Include="Admin\assets\css\daterangepicker.css" />
+    <Content Include="Admin\assets\css\DT_bootstrap.css" />
+    <Content Include="Admin\assets\css\elfinder\css\elfinder.min.css" />
+    <Content Include="Admin\assets\css\elfinder\css\theme.css" />
+    <Content Include="Admin\assets\css\elfinder\img\arrows-active.png" />
+    <Content Include="Admin\assets\css\elfinder\img\arrows-normal.png" />
+    <Content Include="Admin\assets\css\elfinder\img\crop.gif" />
+    <Content Include="Admin\assets\css\elfinder\img\dialogs.png" />
+    <Content Include="Admin\assets\css\elfinder\img\icons-big.png" />
+    <Content Include="Admin\assets\css\elfinder\img\icons-small.png" />
+    <Content Include="Admin\assets\css\elfinder\img\logo.png" />
+    <Content Include="Admin\assets\css\elfinder\img\progress.gif" />
+    <Content Include="Admin\assets\css\elfinder\img\quicklook-bg.png" />
+    <Content Include="Admin\assets\css\elfinder\img\quicklook-icons.png" />
+    <Content Include="Admin\assets\css\elfinder\img\resize.png" />
+    <Content Include="Admin\assets\css\elfinder\img\spinner-mini.gif" />
+    <Content Include="Admin\assets\css\elfinder\img\toolbar.png" />
+    <Content Include="Admin\assets\css\error.css" />
+    <Content Include="Admin\assets\css\font-awesome-ie7.css" />
+    <Content Include="Admin\assets\css\font-awesome-ie7.min.css" />
+    <Content Include="Admin\assets\css\font-awesome.css" />
+    <Content Include="Admin\assets\css\font-awesome.min.css" />
+    <Content Include="Admin\assets\css\fullcalendar.css" />
+    <Content Include="Admin\assets\css\jasny-bootstrap-responsive.css" />
+    <Content Include="Admin\assets\css\jasny-bootstrap-responsive.min.css" />
+    <Content Include="Admin\assets\css\jasny-bootstrap.css" />
+    <Content Include="Admin\assets\css\jasny-bootstrap.min.css" />
+    <Content Include="Admin\assets\css\jquery.cleditor.css" />
+    <Content Include="Admin\assets\css\jquery.gritter.css" />
+    <Content Include="Admin\assets\css\jquery.plupload.queue.css" />
+    <Content Include="Admin\assets\css\jquery.tagsinput.css" />
+    <Content Include="Admin\assets\css\layout2.css" />
+    <Content Include="Admin\assets\css\login.css" />
+    <Content Include="Admin\assets\css\prettify.css" />
+    <Content Include="Admin\assets\css\proggress.css" />
+    <Content Include="Admin\assets\css\responsive-tables.css" />
+    <Content Include="Admin\assets\css\style-switcher.css" />
+    <Content Include="Admin\assets\css\style.css" />
+    <Content Include="Admin\assets\css\theme.css" />
+    <Content Include="Admin\assets\css\timepicker.css" />
+    <Content Include="Admin\assets\css\uniform.default.css" />
+    <Content Include="Admin\assets\css\validationEngine.jquery.css" />
+    <Content Include="Admin\assets\css\wmd.css" />
+    <Content Include="Admin\assets\css\wysiwyg-color.css" />
+    <Content Include="Admin\assets\files\arrows-active.png" />
+    <Content Include="Admin\assets\files\Deneme\new.txt" />
+    <Content Include="Admin\assets\font\fontawesome-webfont.svg" />
+    <Content Include="Admin\assets\img\bg.png" />
+    <Content Include="Admin\assets\img\body-bg.png" />
+    <Content Include="Admin\assets\img\chosen\chosen-sprite%402x.png" />
+    <Content Include="Admin\assets\img\chosen\chosen-sprite.png" />
+    <Content Include="Admin\assets\img\cleditor\buttons.gif" />
+    <Content Include="Admin\assets\img\cleditor\toolbar.gif" />
+    <Content Include="Admin\assets\img\colorpicker\alpha.png" />
+    <Content Include="Admin\assets\img\colorpicker\hue.png" />
+    <Content Include="Admin\assets\img\colorpicker\saturation.png" />
+    <Content Include="Admin\assets\img\cp.png" />
+    <Content Include="Admin\assets\img\datatable\back_disabled.png" />
+    <Content Include="Admin\assets\img\datatable\back_enabled.png" />
+    <Content Include="Admin\assets\img\datatable\back_enabled_hover.png" />
+    <Content Include="Admin\assets\img\datatable\favicon.ico" />
+    <Content Include="Admin\assets\img\datatable\forward_disabled.png" />
+    <Content Include="Admin\assets\img\datatable\forward_enabled.png" />
+    <Content Include="Admin\assets\img\datatable\forward_enabled_hover.png" />
+    <Content Include="Admin\assets\img\datatable\sort_asc.png" />
+    <Content Include="Admin\assets\img\datatable\sort_asc_disabled.png" />
+    <Content Include="Admin\assets\img\datatable\sort_both.png" />
+    <Content Include="Admin\assets\img\datatable\sort_desc.png" />
+    <Content Include="Admin\assets\img\datatable\sort_desc_disabled.png" />
+    <Content Include="Admin\assets\img\elfinder\arrows-active.png" />
+    <Content Include="Admin\assets\img\elfinder\arrows-normal.png" />
+    <Content Include="Admin\assets\img\elfinder\crop.gif" />
+    <Content Include="Admin\assets\img\elfinder\dialogs.png" />
+    <Content Include="Admin\assets\img\elfinder\icons-big.png" />
+    <Content Include="Admin\assets\img\elfinder\icons-small.png" />
+    <Content Include="Admin\assets\img\elfinder\logo.png" />
+    <Content Include="Admin\assets\img\elfinder\progress.gif" />
+    <Content Include="Admin\assets\img\elfinder\quicklook-bg.png" />
+    <Content Include="Admin\assets\img\elfinder\quicklook-icons.png" />
+    <Content Include="Admin\assets\img\elfinder\resize.png" />
+    <Content Include="Admin\assets\img\elfinder\spinner-mini.gif" />
+    <Content Include="Admin\assets\img\elfinder\toolbar.png" />
+    <Content Include="Admin\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Admin\assets\img\glyphicons-halflings.png" />
+    <Content Include="Admin\assets\img\gritter\gritter-light.png" />
+    <Content Include="Admin\assets\img\gritter\gritter-long.png" />
+    <Content Include="Admin\assets\img\gritter\gritter.png" />
+    <Content Include="Admin\assets\img\gritter\ie-spacer.gif" />
+    <Content Include="Admin\assets\img\gritter\trees.jpg" />
+    <Content Include="Admin\assets\img\logo.png" />
+    <Content Include="Admin\assets\img\pattern\45degreee_fabric.png" />
+    <Content Include="Admin\assets\img\pattern\60degree_gray.png" />
+    <Content Include="Admin\assets\img\pattern\absurdidad.png" />
+    <Content Include="Admin\assets\img\pattern\agsquare.png" />
+    <Content Include="Admin\assets\img\pattern\always_grey.png" />
+    <Content Include="Admin\assets\img\pattern\arab_tile.png" />
+    <Content Include="Admin\assets\img\pattern\arches.png" />
+    <Content Include="Admin\assets\img\pattern\argyle.png" />
+    <Content Include="Admin\assets\img\pattern\asfalt.png" />
+    <Content Include="Admin\assets\img\pattern\assault.png" />
+    <Content Include="Admin\assets\img\pattern\az_subtle.png" />
+    <Content Include="Admin\assets\img\pattern\back_pattern.png" />
+    <Content Include="Admin\assets\img\pattern\batthern.png" />
+    <Content Include="Admin\assets\img\pattern\bedge_grunge.png" />
+    <Content Include="Admin\assets\img\pattern\beige_paper.png" />
+    <Content Include="Admin\assets\img\pattern\bgnoise_lg.png" />
+    <Content Include="Admin\assets\img\pattern\billie_holiday.png" />
+    <Content Include="Admin\assets\img\pattern\black-Linen.png" />
+    <Content Include="Admin\assets\img\pattern\blackmamba.png" />
+    <Content Include="Admin\assets\img\pattern\blackorchid.png" />
+    <Content Include="Admin\assets\img\pattern\black_denim.png" />
+    <Content Include="Admin\assets\img\pattern\black_linen_v2.png" />
+    <Content Include="Admin\assets\img\pattern\black_lozenge.png" />
+    <Content Include="Admin\assets\img\pattern\black_mamba.png" />
+    <Content Include="Admin\assets\img\pattern\black_paper.png" />
+    <Content Include="Admin\assets\img\pattern\black_scales.png" />
+    <Content Include="Admin\assets\img\pattern\black_thread.png" />
+    <Content Include="Admin\assets\img\pattern\black_twill.png" />
+    <Content Include="Admin\assets\img\pattern\blizzard.png" />
+    <Content Include="Admin\assets\img\pattern\blu_stripes.png" />
+    <Content Include="Admin\assets\img\pattern\bo_play_pattern.png" />
+    <Content Include="Admin\assets\img\pattern\bright_squares.png" />
+    <Content Include="Admin\assets\img\pattern\brillant.png" />
+    <Content Include="Admin\assets\img\pattern\broken_noise.png" />
+    <Content Include="Admin\assets\img\pattern\brushed_alu.png" />
+    <Content Include="Admin\assets\img\pattern\brushed_alu_dark.png" />
+    <Content Include="Admin\assets\img\pattern\burried.png" />
+    <Content Include="Admin\assets\img\pattern\candyhole.png" />
+    <Content Include="Admin\assets\img\pattern\carbon_fibre.png" />
+    <Content Include="Admin\assets\img\pattern\carbon_fibre_big.png" />
+    <Content Include="Admin\assets\img\pattern\carbon_fibre_v2.png" />
+    <Content Include="Admin\assets\img\pattern\cardboard.png" />
+    <Content Include="Admin\assets\img\pattern\cardboard_1.png" />
+    <Content Include="Admin\assets\img\pattern\cardboard_flat.png" />
+    <Content Include="Admin\assets\img\pattern\cartographer.png" />
+    <Content Include="Admin\assets\img\pattern\checkered_pattern.png" />
+    <Content Include="Admin\assets\img\pattern\chruch.png" />
+    <Content Include="Admin\assets\img\pattern\circles.png" />
+    <Content Include="Admin\assets\img\pattern\classy_fabric.png" />
+    <Content Include="Admin\assets\img\pattern\clean_textile.png" />
+    <Content Include="Admin\assets\img\pattern\climpek.png" />
+    <Content Include="Admin\assets\img\pattern\cloth_alike.png" />
+    <Content Include="Admin\assets\img\pattern\concrete_wall.png" />
+    <Content Include="Admin\assets\img\pattern\concrete_wall_2.png" />
+    <Content Include="Admin\assets\img\pattern\concrete_wall_3.png" />
+    <Content Include="Admin\assets\img\pattern\connect.png" />
+    <Content Include="Admin\assets\img\pattern\cork_1.png" />
+    <Content Include="Admin\assets\img\pattern\corrugation.png" />
+    <Content Include="Admin\assets\img\pattern\cracks_1.png" />
+    <Content Include="Admin\assets\img\pattern\creampaper.png" />
+    <Content Include="Admin\assets\img\pattern\cream_dust.png" />
+    <Content Include="Admin\assets\img\pattern\crisp_paper_ruffles.png" />
+    <Content Include="Admin\assets\img\pattern\crissXcross.png" />
+    <Content Include="Admin\assets\img\pattern\crossed_stripes.png" />
+    <Content Include="Admin\assets\img\pattern\crosses.png" />
+    <Content Include="Admin\assets\img\pattern\cross_scratches.png" />
+    <Content Include="Admin\assets\img\pattern\cubes.png" />
+    <Content Include="Admin\assets\img\pattern\cutcube.png" />
+    <Content Include="Admin\assets\img\pattern\daimond_eyes.png" />
+    <Content Include="Admin\assets\img\pattern\darkdenim3.png" />
+    <Content Include="Admin\assets\img\pattern\dark_brick_wall.png" />
+    <Content Include="Admin\assets\img\pattern\dark_circles.png" />
+    <Content Include="Admin\assets\img\pattern\dark_dotted.png" />
+    <Content Include="Admin\assets\img\pattern\dark_dotted2.png" />
+    <Content Include="Admin\assets\img\pattern\dark_exa.png" />
+    <Content Include="Admin\assets\img\pattern\dark_fish_skin.png" />
+    <Content Include="Admin\assets\img\pattern\dark_geometric.png" />
+    <Content Include="Admin\assets\img\pattern\dark_leather.png" />
+    <Content Include="Admin\assets\img\pattern\dark_matter.png" />
+    <Content Include="Admin\assets\img\pattern\dark_mosaic.png" />
+    <Content Include="Admin\assets\img\pattern\dark_stripes.png" />
+    <Content Include="Admin\assets\img\pattern\dark_Tire.png" />
+    <Content Include="Admin\assets\img\pattern\dark_wall.png" />
+    <Content Include="Admin\assets\img\pattern\dark_wood.png" />
+    <Content Include="Admin\assets\img\pattern\darth_stripe.png" />
+    <Content Include="Admin\assets\img\pattern\debut_dark.png" />
+    <Content Include="Admin\assets\img\pattern\debut_light.png" />
+    <Content Include="Admin\assets\img\pattern\demo.html" />
+    <Content Include="Admin\assets\img\pattern\denim.png" />
+    <Content Include="Admin\assets\img\pattern\diagmonds.png" />
+    <Content Include="Admin\assets\img\pattern\diagonal-noise.png" />
+    <Content Include="Admin\assets\img\pattern\diagonales_decalees.png" />
+    <Content Include="Admin\assets\img\pattern\diagonal_striped_brick.png" />
+    <Content Include="Admin\assets\img\pattern\diagonal_waves.png" />
+    <Content Include="Admin\assets\img\pattern\diamonds.png" />
+    <Content Include="Admin\assets\img\pattern\diamond_upholstery.png" />
+    <Content Include="Admin\assets\img\pattern\dirty_old_shirt.png" />
+    <Content Include="Admin\assets\img\pattern\double_lined.png" />
+    <Content Include="Admin\assets\img\pattern\dust.png" />
+    <Content Include="Admin\assets\img\pattern\dvsup.png" />
+    <Content Include="Admin\assets\img\pattern\ecailles.png" />
+    <Content Include="Admin\assets\img\pattern\egg_shell.png" />
+    <Content Include="Admin\assets\img\pattern\elastoplast.png" />
+    <Content Include="Admin\assets\img\pattern\elegant_grid.png" />
+    <Content Include="Admin\assets\img\pattern\embossed_paper.png" />
+    <Content Include="Admin\assets\img\pattern\escheresque.png" />
+    <Content Include="Admin\assets\img\pattern\escheresque_ste.png" />
+    <Content Include="Admin\assets\img\pattern\exclusive_paper.png" />
+    <Content Include="Admin\assets\img\pattern\extra_clean_paper.png" />
+    <Content Include="Admin\assets\img\pattern\fabric_1.png" />
+    <Content Include="Admin\assets\img\pattern\fabric_of_squares_gray.png" />
+    <Content Include="Admin\assets\img\pattern\fabric_plaid.png" />
+    <Content Include="Admin\assets\img\pattern\fake_brick.png" />
+    <Content Include="Admin\assets\img\pattern\fake_luxury.png" />
+    <Content Include="Admin\assets\img\pattern\fancy_deboss.png" />
+    <Content Include="Admin\assets\img\pattern\farmer.png" />
+    <Content Include="Admin\assets\img\pattern\felt.png" />
+    <Content Include="Admin\assets\img\pattern\first_aid_kit.png" />
+    <Content Include="Admin\assets\img\pattern\flowers.png" />
+    <Content Include="Admin\assets\img\pattern\flowertrail.png" />
+    <Content Include="Admin\assets\img\pattern\foggy_birds.png" />
+    <Content Include="Admin\assets\img\pattern\foil.png" />
+    <Content Include="Admin\assets\img\pattern\frenchstucco.png" />
+    <Content Include="Admin\assets\img\pattern\furley_bg.png" />
+    <Content Include="Admin\assets\img\pattern\gold_scale.png" />
+    <Content Include="Admin\assets\img\pattern\gplaypattern.png" />
+    <Content Include="Admin\assets\img\pattern\gradient_squares.png" />
+    <Content Include="Admin\assets\img\pattern\graphy.png" />
+    <Content Include="Admin\assets\img\pattern\gray_jean.png" />
+    <Content Include="Admin\assets\img\pattern\gray_sand.png" />
+    <Content Include="Admin\assets\img\pattern\green-fibers.png" />
+    <Content Include="Admin\assets\img\pattern\green_dust_scratch.png" />
+    <Content Include="Admin\assets\img\pattern\green_gobbler.png" />
+    <Content Include="Admin\assets\img\pattern\grey.png" />
+    <Content Include="Admin\assets\img\pattern\greyfloral.png" />
+    <Content Include="Admin\assets\img\pattern\grey_sandbag.png" />
+    <Content Include="Admin\assets\img\pattern\grid.png" />
+    <Content Include="Admin\assets\img\pattern\gridme.png" />
+    <Content Include="Admin\assets\img\pattern\grid_noise.png" />
+    <Content Include="Admin\assets\img\pattern\grilled.png" />
+    <Content Include="Admin\assets\img\pattern\groovepaper.png" />
+    <Content Include="Admin\assets\img\pattern\grunge_wall.png" />
+    <Content Include="Admin\assets\img\pattern\gun_metal.png" />
+    <Content Include="Admin\assets\img\pattern\handmadepaper.png" />
+    <Content Include="Admin\assets\img\pattern\hexabump.png" />
+    <Content Include="Admin\assets\img\pattern\hexellence.png" />
+    <Content Include="Admin\assets\img\pattern\hixs_pattern_evolution.png" />
+    <Content Include="Admin\assets\img\pattern\honey_im_subtle.png" />
+    <Content Include="Admin\assets\img\pattern\husk.png" />
+    <Content Include="Admin\assets\img\pattern\ice_age.png" />
+    <Content Include="Admin\assets\img\pattern\inflicted.png" />
+    <Content Include="Admin\assets\img\pattern\irongrip.png" />
+    <Content Include="Admin\assets\img\pattern\kindajean.png" />
+    <Content Include="Admin\assets\img\pattern\knitted-netting.png" />
+    <Content Include="Admin\assets\img\pattern\knitting250px.png" />
+    <Content Include="Admin\assets\img\pattern\kuji.png" />
+    <Content Include="Admin\assets\img\pattern\large_leather.png" />
+    <Content Include="Admin\assets\img\pattern\leather_1.png" />
+    <Content Include="Admin\assets\img\pattern\lghtmesh.png" />
+    <Content Include="Admin\assets\img\pattern\lightpaperfibers.png" />
+    <Content Include="Admin\assets\img\pattern\light_alu.png" />
+    <Content Include="Admin\assets\img\pattern\light_checkered_tiles.png" />
+    <Content Include="Admin\assets\img\pattern\light_grey_floral_motif.png" />
+    <Content Include="Admin\assets\img\pattern\light_honeycomb.png" />
+    <Content Include="Admin\assets\img\pattern\light_noise_diagonal.png" />
+    <Content Include="Admin\assets\img\pattern\light_toast.png" />
+    <Content Include="Admin\assets\img\pattern\light_wool.png" />
+    <Content Include="Admin\assets\img\pattern\lil_fiber.png" />
+    <Content Include="Admin\assets\img\pattern\linedpaper.png" />
+    <Content Include="Admin\assets\img\pattern\lined_paper.png" />
+    <Content Include="Admin\assets\img\pattern\linen.png" />
+    <Content Include="Admin\assets\img\pattern\littleknobs.png" />
+    <Content Include="Admin\assets\img\pattern\little_pluses.png" />
+    <Content Include="Admin\assets\img\pattern\little_triangles.png" />
+    <Content Include="Admin\assets\img\pattern\low_contrast_linen.png" />
+    <Content Include="Admin\assets\img\pattern\lyonnette.png" />
+    <Content Include="Admin\assets\img\pattern\merely_cubed.png" />
+    <Content Include="Admin\assets\img\pattern\micro_carbon.png" />
+    <Content Include="Admin\assets\img\pattern\mirrored_squares.png" />
+    <Content Include="Admin\assets\img\pattern\mochaGrunge.png" />
+    <Content Include="Admin\assets\img\pattern\moulin.png" />
+    <Content Include="Admin\assets\img\pattern\nami.png" />
+    <Content Include="Admin\assets\img\pattern\nasty_fabric.png" />
+    <Content Include="Admin\assets\img\pattern\natural_paper.png" />
+    <Content Include="Admin\assets\img\pattern\navy_blue.png" />
+    <Content Include="Admin\assets\img\pattern\nistri.png" />
+    <Content Include="Admin\assets\img\pattern\noise_lines.png" />
+    <Content Include="Admin\assets\img\pattern\noise_pattern_with_crosslines.png" />
+    <Content Include="Admin\assets\img\pattern\noisy.png" />
+    <Content Include="Admin\assets\img\pattern\noisy_grid.png" />
+    <Content Include="Admin\assets\img\pattern\noisy_net.png" />
+    <Content Include="Admin\assets\img\pattern\norwegian_rose.png" />
+    <Content Include="Admin\assets\img\pattern\office.png" />
+    <Content Include="Admin\assets\img\pattern\old_mathematics.png" />
+    <Content Include="Admin\assets\img\pattern\old_wall.png" />
+    <Content Include="Admin\assets\img\pattern\otis_redding.png" />
+    <Content Include="Admin\assets\img\pattern\outlets.png" />
+    <Content Include="Admin\assets\img\pattern\padded.png" />
+    <Content Include="Admin\assets\img\pattern\paper.png" />
+    <Content Include="Admin\assets\img\pattern\paper_1.png" />
+    <Content Include="Admin\assets\img\pattern\paper_2.png" />
+    <Content Include="Admin\assets\img\pattern\paper_3.png" />
+    <Content Include="Admin\assets\img\pattern\paper_fibers.png" />
+    <Content Include="Admin\assets\img\pattern\paven.png" />
+    <Content Include="Admin\assets\img\pattern\perforated_white_leather.png" />
+    <Content Include="Admin\assets\img\pattern\pineapplecut.png" />
+    <Content Include="Admin\assets\img\pattern\pinstripe.png" />
+    <Content Include="Admin\assets\img\pattern\pinstriped_suit.png" />
+    <Content Include="Admin\assets\img\pattern\plaid.png" />
+    <Content Include="Admin\assets\img\pattern\polaroid.png" />
+    <Content Include="Admin\assets\img\pattern\polonez_car.png" />
+    <Content Include="Admin\assets\img\pattern\polyester_lite.png" />
+    <Content Include="Admin\assets\img\pattern\pool_table.png" />
+    <Content Include="Admin\assets\img\pattern\project_papper.png" />
+    <Content Include="Admin\assets\img\pattern\psychedelic_pattern.png" />
+    <Content Include="Admin\assets\img\pattern\purty_wood.png" />
+    <Content Include="Admin\assets\img\pattern\pw_maze_black.png" />
+    <Content Include="Admin\assets\img\pattern\pw_maze_white.png" />
+    <Content Include="Admin\assets\img\pattern\px_by_Gre3g.png" />
+    <Content Include="Admin\assets\img\pattern\pyramid.png" />
+    <Content Include="Admin\assets\img\pattern\quilt.png" />
+    <Content Include="Admin\assets\img\pattern\random_grey_variations.png" />
+    <Content Include="Admin\assets\img\pattern\ravenna.png" />
+    <Content Include="Admin\assets\img\pattern\real_cf.png" />
+    <Content Include="Admin\assets\img\pattern\rebel.png" />
+    <Content Include="Admin\assets\img\pattern\redox_01.png" />
+    <Content Include="Admin\assets\img\pattern\redox_02.png" />
+    <Content Include="Admin\assets\img\pattern\reticular_tissue.png" />
+    <Content Include="Admin\assets\img\pattern\retina_wood.png" />
+    <Content Include="Admin\assets\img\pattern\retro_intro.png" />
+    <Content Include="Admin\assets\img\pattern\ricepaper.png" />
+    <Content Include="Admin\assets\img\pattern\ricepaper2.png" />
+    <Content Include="Admin\assets\img\pattern\rip_jobs.png" />
+    <Content Include="Admin\assets\img\pattern\robots.png" />
+    <Content Include="Admin\assets\img\pattern\rockywall.png" />
+    <Content Include="Admin\assets\img\pattern\roughcloth.png" />
+    <Content Include="Admin\assets\img\pattern\rough_diagonal.png" />
+    <Content Include="Admin\assets\img\pattern\rubber_grip.png" />
+    <Content Include="Admin\assets\img\pattern\satinweave.png" />
+    <Content Include="Admin\assets\img\pattern\scribble_light.png" />
+    <Content Include="Admin\assets\img\pattern\shattered.png" />
+    <Content Include="Admin\assets\img\pattern\shinecaro.png" />
+    <Content Include="Admin\assets\img\pattern\shinedotted.png" />
+    <Content Include="Admin\assets\img\pattern\shl.png" />
+    <Content Include="Admin\assets\img\pattern\silver_scales.png" />
+    <Content Include="Admin\assets\img\pattern\simple_dashed.png" />
+    <Content Include="Admin\assets\img\pattern\skelatal_weave.png" />
+    <Content Include="Admin\assets\img\pattern\skewed_print.png" />
+    <Content Include="Admin\assets\img\pattern\skin_side_up.png" />
+    <Content Include="Admin\assets\img\pattern\slash_it.png" />
+    <Content Include="Admin\assets\img\pattern\small-crackle-bright.png" />
+    <Content Include="Admin\assets\img\pattern\small_tiles.png" />
+    <Content Include="Admin\assets\img\pattern\smooth_wall.png" />
+    <Content Include="Admin\assets\img\pattern\sneaker_mesh_fabric.png" />
+    <Content Include="Admin\assets\img\pattern\snow.png" />
+    <Content Include="Admin\assets\img\pattern\soft_circle_scales.png" />
+    <Content Include="Admin\assets\img\pattern\soft_kill.png" />
+    <Content Include="Admin\assets\img\pattern\soft_pad.png" />
+    <Content Include="Admin\assets\img\pattern\soft_wallpaper.png" />
+    <Content Include="Admin\assets\img\pattern\solid.png" />
+    <Content Include="Admin\assets\img\pattern\squares.png" />
+    <Content Include="Admin\assets\img\pattern\square_bg.png" />
+    <Content Include="Admin\assets\img\pattern\stacked_circles.png" />
+    <Content Include="Admin\assets\img\pattern\starring.png" />
+    <Content Include="Admin\assets\img\pattern\stitched_wool.png" />
+    <Content Include="Admin\assets\img\pattern\strange_bullseyes.png" />
+    <Content Include="Admin\assets\img\pattern\straws.png" />
+    <Content Include="Admin\assets\img\pattern\stressed_linen.png" />
+    <Content Include="Admin\assets\img\pattern\striped_lens.png" />
+    <Content Include="Admin\assets\img\pattern\struckaxiom.png" />
+    <Content Include="Admin\assets\img\pattern\stucco.png" />
+    <Content Include="Admin\assets\img\pattern\subtlenet2.png" />
+    <Content Include="Admin\assets\img\pattern\subtle_carbon.png" />
+    <Content Include="Admin\assets\img\pattern\subtle_dots.png" />
+    <Content Include="Admin\assets\img\pattern\subtle_freckles.png" />
+    <Content Include="Admin\assets\img\pattern\subtle_grunge.png" />
+    <Content Include="Admin\assets\img\pattern\subtle_orange_emboss.png" />
+    <Content Include="Admin\assets\img\pattern\subtle_stripes.png" />
+    <Content Include="Admin\assets\img\pattern\subtle_surface.png" />
+    <Content Include="Admin\assets\img\pattern\subtle_white_feathers.png" />
+    <Content Include="Admin\assets\img\pattern\subtle_zebra_3d.png" />
+    <Content Include="Admin\assets\img\pattern\swirl.png" />
+    <Content Include="Admin\assets\img\pattern\tactile_noise.png" />
+    <Content Include="Admin\assets\img\pattern\tapestry_pattern.png" />
+    <Content Include="Admin\assets\img\pattern\tasky_pattern.png" />
+    <Content Include="Admin\assets\img\pattern\tex2res1.png" />
+    <Content Include="Admin\assets\img\pattern\tex2res2.png" />
+    <Content Include="Admin\assets\img\pattern\tex2res3.png" />
+    <Content Include="Admin\assets\img\pattern\tex2res4.png" />
+    <Content Include="Admin\assets\img\pattern\tex2res5.png" />
+    <Content Include="Admin\assets\img\pattern\textured_stripes.png" />
+    <Content Include="Admin\assets\img\pattern\texturetastic_gray.png" />
+    <Content Include="Admin\assets\img\pattern\tileable_wood_texture.png" />
+    <Content Include="Admin\assets\img\pattern\tiny_grid.png" />
+    <Content Include="Admin\assets\img\pattern\triangles.png" />
+    <Content Include="Admin\assets\img\pattern\triangles_pattern.png" />
+    <Content Include="Admin\assets\img\pattern\twinkle_twinkle.png" />
+    <Content Include="Admin\assets\img\pattern\txture.png" />
+    <Content Include="Admin\assets\img\pattern\type.png" />
+    <Content Include="Admin\assets\img\pattern\use_your_illusion.png" />
+    <Content Include="Admin\assets\img\pattern\vaio_hard_edge.png" />
+    <Content Include="Admin\assets\img\pattern\vertical_cloth.png" />
+    <Content Include="Admin\assets\img\pattern\vichy.png" />
+    <Content Include="Admin\assets\img\pattern\vintage_speckles.png" />
+    <Content Include="Admin\assets\img\pattern\wall4.png" />
+    <Content Include="Admin\assets\img\pattern\washi.png" />
+    <Content Include="Admin\assets\img\pattern\wavecut.png" />
+    <Content Include="Admin\assets\img\pattern\weave.png" />
+    <Content Include="Admin\assets\img\pattern\whitediamond.png" />
+    <Content Include="Admin\assets\img\pattern\whitey.png" />
+    <Content Include="Admin\assets\img\pattern\white_bed_sheet.png" />
+    <Content Include="Admin\assets\img\pattern\white_brick_wall.png" />
+    <Content Include="Admin\assets\img\pattern\white_carbon.png" />
+    <Content Include="Admin\assets\img\pattern\white_carbonfiber.png" />
+    <Content Include="Admin\assets\img\pattern\white_leather.png" />
+    <Content Include="Admin\assets\img\pattern\white_paperboard.png" />
+    <Content Include="Admin\assets\img\pattern\white_plaster.png" />
+    <Content Include="Admin\assets\img\pattern\white_sand.png" />
+    <Content Include="Admin\assets\img\pattern\white_texture.png" />
+    <Content Include="Admin\assets\img\pattern\white_tiles.png" />
+    <Content Include="Admin\assets\img\pattern\white_wall.png" />
+    <Content Include="Admin\assets\img\pattern\white_wall2.png" />
+    <Content Include="Admin\assets\img\pattern\white_wall_hash.png" />
+    <Content Include="Admin\assets\img\pattern\white_wave.png" />
+    <Content Include="Admin\assets\img\pattern\wide_rectangles.png" />
+    <Content Include="Admin\assets\img\pattern\wild_oliva.png" />
+    <Content Include="Admin\assets\img\pattern\wood_1.jpg" />
+    <Content Include="Admin\assets\img\pattern\wood_1.png" />
+    <Content Include="Admin\assets\img\pattern\wood_pattern.png" />
+    <Content Include="Admin\assets\img\pattern\worn_dots.png" />
+    <Content Include="Admin\assets\img\pattern\woven.png" />
+    <Content Include="Admin\assets\img\pattern\xv.png" />
+    <Content Include="Admin\assets\img\pattern\zigzag.png" />
+    <Content Include="Admin\assets\img\plupload\backgrounds.gif" />
+    <Content Include="Admin\assets\img\plupload\buttons-disabled.png" />
+    <Content Include="Admin\assets\img\plupload\buttons.png" />
+    <Content Include="Admin\assets\img\plupload\delete.gif" />
+    <Content Include="Admin\assets\img\plupload\done.gif" />
+    <Content Include="Admin\assets\img\plupload\error.gif" />
+    <Content Include="Admin\assets\img\plupload\throbber.gif" />
+    <Content Include="Admin\assets\img\plupload\transp50.png" />
+    <Content Include="Admin\assets\img\px_by_Gre3g.png" />
+    <Content Include="Admin\assets\img\uniform\bg-input-focus.png" />
+    <Content Include="Admin\assets\img\uniform\bg-input.png" />
+    <Content Include="Admin\assets\img\uniform\sprite.png" />
+    <Content Include="Admin\assets\img\user.gif" />
+    <Content Include="Admin\assets\js\bootstrap-colorpicker.js" />
+    <Content Include="Admin\assets\js\chart.js" />
+    <Content Include="Admin\assets\js\countdown.js" />
+    <Content Include="Admin\assets\js\cssbeautify.js" />
+    <Content Include="Admin\assets\js\dash.js" />
+    <Content Include="Admin\assets\js\dashboard.js" />
+    <Content Include="Admin\assets\js\lib\bootstrap-colorpicker.js" />
+    <Content Include="Admin\assets\js\lib\bootstrap-datepicker.js" />
+    <Content Include="Admin\assets\js\lib\bootstrap-fileupload.js" />
+    <Content Include="Admin\assets\js\lib\bootstrap-inputmask.js" />
+    <Content Include="Admin\assets\js\lib\bootstrap-progressbar.min.js" />
+    <Content Include="Admin\assets\js\lib\bootstrap-rowlink.js" />
+    <Content Include="Admin\assets\js\lib\bootstrap-timepicker.js" />
+    <Content Include="Admin\assets\js\lib\bootstrap-wysihtml5-0.0.2.min.js" />
+    <Content Include="Admin\assets\js\lib\chosen.jquery.min.js" />
+    <Content Include="Admin\assets\js\lib\date.js" />
+    <Content Include="Admin\assets\js\lib\daterangepicker.js" />
+    <Content Include="Admin\assets\js\lib\DT_bootstrap.js" />
+    <Content Include="Admin\assets\js\lib\elfinder.min.js" />
+    <Content Include="Admin\assets\js\lib\flot\excanvas.js" />
+    <Content Include="Admin\assets\js\lib\flot\excanvas.min.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.colorhelpers.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.crosshair.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.image.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.navigate.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.pie.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.resize.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.selection.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.stack.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.symbol.js" />
+    <Content Include="Admin\assets\js\lib\flot\jquery.flot.threshold.js" />
+    <Content Include="Admin\assets\js\lib\fullcalendar.min.js" />
+    <Content Include="Admin\assets\js\lib\gmaps.js" />
+    <Content Include="Admin\assets\js\lib\jasny-bootstrap.js" />
+    <Content Include="Admin\assets\js\lib\jasny-bootstrap.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.autosize-min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.cleditor.js" />
+    <Content Include="Admin\assets\js\lib\jquery.countdown.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.dataTables.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.dualListBox-1.3.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.form.js" />
+    <Content Include="Admin\assets\js\lib\jquery.form.wizard-min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.gritter.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.inputlimiter.1.3.1.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.mousewheel.js" />
+    <Content Include="Admin\assets\js\lib\jquery.nicescroll.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.plupload.queue.js" />
+    <Content Include="Admin\assets\js\lib\jquery.sparkline.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.tablesorter.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.tagsinput.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.toggle.buttons.js" />
+    <Content Include="Admin\assets\js\lib\jquery.uniform.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.validate.min.js" />
+    <Content Include="Admin\assets\js\lib\jquery.validationEngine.js" />
+    <Content Include="Admin\assets\js\lib\jquery.validVal-4.3.2.js" />
+    <Content Include="Admin\assets\js\lib\languages\jquery.validationEngine-en.js" />
+    <Content Include="Admin\assets\js\lib\Markdown.Converter.js" />
+    <Content Include="Admin\assets\js\lib\Markdown.Editor.js" />
+    <Content Include="Admin\assets\js\lib\Markdown.Sanitizer.js" />
+    <Content Include="Admin\assets\js\lib\plupload.html4.js" />
+    <Content Include="Admin\assets\js\lib\plupload.html5.js" />
+    <Content Include="Admin\assets\js\lib\plupload.js" />
+    <Content Include="Admin\assets\js\lib\prettify.js" />
+    <Content Include="Admin\assets\js\lib\responsive-tables.js" />
+    <Content Include="Admin\assets\js\lib\wysihtml5-0.4.0pre.min.js" />
+    <Content Include="Admin\assets\js\main.js" />
+    <Content Include="Admin\assets\js\plugins.js" />
+    <Content Include="Admin\assets\js\style-switcher.js" />
+    <Content Include="Admin\assets\js\vendor\bootstrap.js" />
+    <Content Include="Admin\assets\js\vendor\bootstrap.min.js" />
+    <Content Include="Admin\assets\js\vendor\jquery-1.9.1.min.js" />
+    <Content Include="Admin\assets\js\vendor\jquery-migrate-1.1.1.min.js" />
+    <Content Include="Admin\assets\js\vendor\jquery-ui-1.10.0.custom.min.js" />
+    <Content Include="Admin\assets\js\vendor\less-1.3.3.min.js" />
+    <Content Include="Admin\assets\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js" />
+    <Content Include="Admin\assets\php\MySQLStorage.sql" />
+    <Content Include="Admin\blank.html" />
+    <Content Include="App_Data\SudokuDB.MDF" />
+    <Content Include="App_Data\SudokuDB_log.ldf">
+      <DependentUpon>SudokuDB.MDF</DependentUpon>
+    </Content>
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\boot-business.css" />
+    <Content Include="Content\bootstrap-notify.css" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrapSwitch.css" />
+    <Content Include="Content\bootstro.css" />
+    <Content Include="Content\bootstro.min.css" />
+    <Content Include="Content\clock.sudoku.css" />
+    <Content Include="Content\samurai.sudoku.50.css" />
+    <Content Include="Content\samurai.sudoku.css" />
+    <Content Include="Content\font-awesome-ie7.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\shadowbox.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\slider.css" />
+    <Content Include="Content\standard.sudoku.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Images\cell.png" />
+    <Content Include="Images\header-logo.png" />
+    <Content Include="Images\notes.png" />
+    <Content Include="Images\panel.png" />
+    <Content Include="img\close.png" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\next.png" />
+    <Content Include="img\pause.png" />
+    <Content Include="img\play.png" />
+    <Content Include="img\previous.png" />
+    <Content Include="Scripts\1937005093.js" />
+    <Content Include="Scripts\shadowbox.js" />
+    <Content Include="Scripts\standard-bk1.js" />
+    <Content Include="Scripts\bootstrap-slider.js" />
+    <Content Include="Scripts\clock.sudoku.v1.0.js" />
+    <Content Include="Scripts\standard.sudoku.v1.0.min.js" />
+    <Content Include="Scripts\standard.sudoku.v1.0.fus2.js" />
+    <Content Include="Scripts\standard.sudoku.v1.0.fus1.js" />
+    <Content Include="Scripts\tutorial.js" />
+    <Content Include="standard-sudoku.aspx" />
+    <Content Include="TextFile1.txt" />
+    <Content Include="tutorial.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="font\fontawesome-webfont.svg" />
+    <Content Include="Images\016.d.gif" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\big-glow.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\CapchaImage.jpg" />
+    <Content Include="Images\classic.jpg" />
+    <Content Include="Images\classic2.png" />
+    <Content Include="Images\clock.gif" />
+    <Content Include="Images\Comingsoon.png" />
+    <Content Include="Images\dragonleft.png" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\loader.gif" />
+    <Content Include="Images\loader.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\nightsky.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\samurai.gif" />
+    <Content Include="Images\small-glow.png" />
+    <Content Include="Images\standard.jpg" />
+    <Content Include="Images\sudoku.jpg" />
+    <Content Include="Images\valid.png" />
+    <Content Include="img\content.png" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\header-footer.png" />
+    <Content Include="img\placeholder-260x150.jpg" />
+    <Content Include="img\placeholder-360x200.jpg" />
+    <Content Include="img\placeholder.jpg" />
+    <Content Include="playclocksudoku.aspx" />
+    <Content Include="playgame.aspx" />
+    <Content Include="playsamuraigame.aspx" />
+    <Content Include="Scripts\bootstrap-notify.js" />
+    <Content Include="Scripts\bootstro.js" />
+    <Content Include="Scripts\bootstro.min.js" />
+    <Content Include="Scripts\fireworks.js" />
+    <Content Include="Scripts\kinetic-v4.5.2.js" />
+    <Content Include="Scripts\requestanimframe.js" />
+    <Content Include="Scripts\samurai.sudoku.v1.0.js" />
+    <Content Include="Scripts\bootstrap-contextmenu.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrapSwitch.js" />
+    <Content Include="Scripts\jquery-1.9.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\standard-backup1.js" />
+    <Content Include="Scripts\standard.sudoku.v1.0.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="verify.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageGames.aspx.cs">
+      <DependentUpon>ManageGames.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageGames.aspx.designer.cs">
+      <DependentUpon>ManageGames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\SudokuService.asmx.cs">
+      <DependentUpon>SudokuService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="standard-sudoku.aspx.cs">
+      <DependentUpon>standard-sudoku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="standard-sudoku.aspx.designer.cs">
+      <DependentUpon>standard-sudoku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tutorial.aspx.cs">
+      <DependentUpon>tutorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tutorial.aspx.designer.cs">
+      <DependentUpon>tutorial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GameSave.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="playclocksudoku.aspx.cs">
+      <DependentUpon>playclocksudoku.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="playclocksudoku.aspx.designer.cs">
+      <DependentUpon>playclocksudoku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="playgame.aspx.cs">
+      <DependentUpon>playgame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="playgame.aspx.designer.cs">
+      <DependentUpon>playgame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="playsamuraigame.aspx.cs">
+      <DependentUpon>playsamuraigame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="playsamuraigame.aspx.designer.cs">
+      <DependentUpon>playsamuraigame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="verify.aspx.cs">
+      <DependentUpon>verify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verify.aspx.designer.cs">
+      <DependentUpon>verify.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Admin\assets\css\datatable\Sorting icons.psd" />
+    <None Include="Admin\assets\files\ilk" />
+    <None Include="Admin\assets\font\fontawesome-webfont.eot" />
+    <None Include="Admin\assets\font\fontawesome-webfont.ttf" />
+    <None Include="Admin\assets\font\fontawesome-webfont.woff" />
+    <None Include="Admin\assets\font\FontAwesome.otf" />
+    <None Include="Admin\assets\img\pattern\demo.php" />
+    <None Include="Admin\assets\img\pattern\README.md" />
+    <None Include="Admin\assets\less\box.less" />
+    <None Include="Admin\assets\less\button.less" />
+    <None Include="Admin\assets\less\component.less" />
+    <None Include="Admin\assets\less\layout.less" />
+    <None Include="Admin\assets\less\layout2.less" />
+    <None Include="Admin\assets\less\menu.less" />
+    <None Include="Admin\assets\less\mixins.less" />
+    <None Include="Admin\assets\less\sticky.less" />
+    <None Include="Admin\assets\less\style.less" />
+    <None Include="Admin\assets\less\switcher.less" />
+    <None Include="Admin\assets\less\theme.less" />
+    <None Include="Admin\assets\less\top-head-footer.less" />
+    <None Include="Admin\assets\less\variables.less" />
+    <None Include="Admin\assets\php\connector.php" />
+    <None Include="Admin\assets\php\elFinder.class.php" />
+    <None Include="Admin\assets\php\elFinderConnector.class.php" />
+    <None Include="Admin\assets\php\elFinderVolumeDriver.class.php" />
+    <None Include="Admin\assets\php\elFinderVolumeLocalFileSystem.class.php" />
+    <None Include="Admin\assets\php\elFinderVolumeMySQL.class.php" />
+    <None Include="Admin\assets\php\mime.types" />
+    <None Include="font\fontawesome-webfont.eot" />
+    <None Include="font\fontawesome-webfont.ttf" />
+    <None Include="font\fontawesome-webfont.woff" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-1.9.1.min.map" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20055</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
